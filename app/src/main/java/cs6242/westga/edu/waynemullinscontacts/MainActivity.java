@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -56,9 +55,11 @@ public class MainActivity extends AppCompatActivity {
         TextView tvEmail = (TextView)findViewById(R.id.tvEmail);
         tvEmail.setText(txtEmail.getText());
         TextView tvPhone= (TextView)findViewById(R.id.tvPhone);
+        CharSequence phoneText;
         if (optHome.isChecked())
-            tvPhone.setText(txtPhone.getText() + " (H)");
+            phoneText = txtPhone.getText() + " (H)";
         else
-            tvPhone.setText(txtPhone.getText() + " (C)");
+            phoneText = txtPhone.getText() + " (C)";
+        tvPhone.setText(phoneText);
     }
 }
